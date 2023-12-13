@@ -47,7 +47,7 @@ export const BackgroundDecoration = () => {
           position="absolute"
           variant="span"
           color="primary.contrastText"
-          fontSize="1rem"
+          fontSize="4vw"
           sx={{
             top: "42%",
             right: "15%",
@@ -99,7 +99,7 @@ export const BackgroundDecoration = () => {
           position="absolute"
           variant="span"
           color="primary.contrastText"
-          fontSize="1.1rem"
+          fontSize="5vw"
           sx={{
             top: "75%",
             right: "10%",
@@ -112,7 +112,7 @@ export const BackgroundDecoration = () => {
           position="absolute"
           variant="span"
           color="primary.contrastText"
-          fontSize="1.2rem"
+          fontSize="5.5vw"
           sx={{
             top: "50%",
             left: "12%",
@@ -125,7 +125,7 @@ export const BackgroundDecoration = () => {
           position="absolute"
           variant="span"
           color="primary.contrastText"
-          fontSize="1.1rem"
+          fontSize="5vw"
           sx={{
             top: "75%",
             left: "10%",
