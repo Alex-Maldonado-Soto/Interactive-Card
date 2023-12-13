@@ -14,7 +14,7 @@ const Img = styled("img")({
   objectPosition: "center",
 });
 
-export const BackgroundDecoration = () => {
+export const BackgroundDecoration = ({cardName, cardNumber, month, year, cvc}) => {
   return (
     <CardMedia
       component="header"
@@ -54,7 +54,7 @@ export const BackgroundDecoration = () => {
             zIndex: 100,
           }}
         >
-          123
+          {cvc}
         </Typography>
         <Img src={img.bgCardBack} alt="" />
       </Box>
@@ -106,7 +106,7 @@ export const BackgroundDecoration = () => {
             zIndex: 100,
           }}
         >
-          00/00
+          {month + "/" + year}
         </Typography>
         <Typography
           position="absolute"
@@ -119,7 +119,7 @@ export const BackgroundDecoration = () => {
             zIndex: 100,
           }}
         >
-          0000 0000 0000 0000
+          {cardNumber}
         </Typography>
         <Typography
           position="absolute"
@@ -132,7 +132,7 @@ export const BackgroundDecoration = () => {
             zIndex: 100,
           }}
         >
-          Jane Appleseed
+          {cardName}
         </Typography>
         <Img src={img.bgCardFront} alt="" />
       </Box>

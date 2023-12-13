@@ -2,20 +2,25 @@ import { Block } from "@mui/icons-material";
 import {
   Box,
   CardContent,
-  Grid,
-  Input,
   InputLabel,
   TextField,
   Button,
 } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 
-export default function Form() {
+export default function Form({name, number, monthC, yearC, cvcC}) {
+
+  const [cardName, setCardName] = useState("");
+  const [cardNumber, setCardNumber] = useState("");
+  const [month, setMonth] = useState("");
+  const [year, setYear] = useState("");
+  const [cvc, setCvc] = useState("");
+
 
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Submit");
+    console.log(cardName, cardNumber, month, year, cvc);
   };
 
   if (true) {
@@ -31,7 +36,13 @@ export default function Form() {
         >
           CARDHOLDER NAME
         </InputLabel>
-        <TextField id="cardName" placeholder="e.g. Jane Appleseed" />
+        <TextField
+          id="cardName"
+          type="text"
+          placeholder="e.g. Jane Appleseed"
+          value={cardName}
+          onChange={(e) => {name(e.target.value), setCardName(e.target.value)}}
+        />
         <InputLabel
           htmlFor="cardNumber"
           sx={{ fontSize: "1rem", fontWeight: "bold" }}
@@ -42,6 +53,8 @@ export default function Form() {
           type="number"
           id="cardNumber"
           placeholder="e.g.1234 5678 9123 0000"
+          value={cardNumber}
+          onChange={(e) => {number(e.target.value), setCardNumber(e.target.value)}}
         />
 
         <Box
@@ -66,12 +79,30 @@ export default function Form() {
             CVC
           </InputLabel>
           <Box sx={{ display: "flex", width: "100%", gap: "10px" }}>
-            <TextField id="Month" type="number" placeholder="MM" />
-            <TextField id="Year" type="number" placeholder="YY" />
+            <TextField
+              id="Month"
+              type="number"
+              placeholder="MM"
+              value={month}
+              onChange={(e) => {monthC(e.target.value), setMonth(e.target.value)}}
+            />
+            <TextField
+              id="Year"
+              type="number"
+              placeholder="YY"
+              value={year}
+              onChange={(e) => {yearC(e.target.value), setYear(e.target.value)}}
+            />
           </Box>
 
           <Box sx={{ width: "100%" }}>
-            <TextField id="CVC" type="number" placeholder="e.g. 123" />
+            <TextField
+              id="CVC"
+              type="number"
+              placeholder="e.g. 123"
+              value={cvc}
+              onChange={(e) => {cvcC(e.target.value), setCvc(e.target.value)}}
+            />
           </Box>
         </Box>
 
