@@ -1,34 +1,30 @@
 import { Block } from "@mui/icons-material";
-import {
-  Box,
-  CardContent,
-  InputLabel,
-  TextField,
-  Button,
-} from "@mui/material";
+import { Box, CardContent, InputLabel, TextField, Button } from "@mui/material";
 import React, { useState } from "react";
 
-export default function Form({name, number, monthC, yearC, cvcC}) {
-
+export default function Form({ name, number, monthC, yearC, cvcC, sent, submit }) {
   const [cardName, setCardName] = useState("");
   const [cardNumber, setCardNumber] = useState("");
   const [month, setMonth] = useState("");
   const [year, setYear] = useState("");
   const [cvc, setCvc] = useState("");
 
-
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(cardName, cardNumber, month, year, cvc);
+    sent(true);
   };
 
-  if (true) {
+  if (!submit) {
     return (
       <CardContent
         component="form"
         onSubmit={handleSubmit}
-        sx={{ marginTop: "30%", display: "grid", gap: "10px" }}
+        sx={{ marginTop: {xs: '30%', md:'0'},
+        margin:{md:'100px'}, 
+        width: "100vw",
+        display: "grid", 
+        alignContent: "center",
+        gap: "10px" }}
       >
         <InputLabel
           htmlFor="cardNumber"
@@ -41,7 +37,9 @@ export default function Form({name, number, monthC, yearC, cvcC}) {
           type="text"
           placeholder="e.g. Jane Appleseed"
           value={cardName}
-          onChange={(e) => {name(e.target.value), setCardName(e.target.value)}}
+          onChange={(e) => {
+            name(e.target.value), setCardName(e.target.value);
+          }}
         />
         <InputLabel
           htmlFor="cardNumber"
@@ -54,7 +52,9 @@ export default function Form({name, number, monthC, yearC, cvcC}) {
           id="cardNumber"
           placeholder="e.g.1234 5678 9123 0000"
           value={cardNumber}
-          onChange={(e) => {number(e.target.value), setCardNumber(e.target.value)}}
+          onChange={(e) => {
+            number(e.target.value), setCardNumber(e.target.value);
+          }}
         />
 
         <Box
@@ -84,14 +84,18 @@ export default function Form({name, number, monthC, yearC, cvcC}) {
               type="number"
               placeholder="MM"
               value={month}
-              onChange={(e) => {monthC(e.target.value), setMonth(e.target.value)}}
+              onChange={(e) => {
+                monthC(e.target.value), setMonth(e.target.value);
+              }}
             />
             <TextField
               id="Year"
               type="number"
               placeholder="YY"
               value={year}
-              onChange={(e) => {yearC(e.target.value), setYear(e.target.value)}}
+              onChange={(e) => {
+                yearC(e.target.value), setYear(e.target.value);
+              }}
             />
           </Box>
 
@@ -101,7 +105,9 @@ export default function Form({name, number, monthC, yearC, cvcC}) {
               type="number"
               placeholder="e.g. 123"
               value={cvc}
-              onChange={(e) => {cvcC(e.target.value), setCvc(e.target.value)}}
+              onChange={(e) => {
+                cvcC(e.target.value), setCvc(e.target.value);
+              }}
             />
           </Box>
         </Box>

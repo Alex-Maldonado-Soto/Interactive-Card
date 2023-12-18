@@ -1,45 +1,51 @@
-import { Button, Container, Card } from "@mui/material";
+import { Button, Container, Card, Box } from "@mui/material";
 import { BackgroundDecoration } from "./components/BackgroundDecoration";
 import Form from "./components/Form";
 import Thank from "./components/thank";
 import { useState } from "react";
 
 export default function App() {
-  const [cardName, setCardName] = useState("");
+  const [cardName, setCardName] = useState("Jane Appleseed");
 
   const name = (newName) => {
     setCardName(newName);
   };
 
-  const [cardNumber, setCardNumber] = useState("");
+  const [cardNumber, setCardNumber] = useState("1234567891230000");
 
   const number = (newNumber) => {
     setCardNumber(newNumber);
   };
 
-  const [month, setMonth] = useState("");
+  const [month, setMonth] = useState("00");
 
   const monthC = (newMonth) => {
     setMonth(newMonth);
   };
 
-  const [year, setYear] = useState("");
+  const [year, setYear] = useState("00");
 
   const yearC = (newYear) => {
     setYear(newYear);
   };
 
-  const [cvc, setCvc] = useState("");
+  const [cvc, setCvc] = useState("123");
 
   const cvcC = (newCvc) => {
     setCvc(newCvc);
   };
 
+  const [submit, setSubmit] = useState("");
+
+  const sent = (newSubmit) => {
+    setSubmit(newSubmit);
+  };
+
   return (
     <>
-      <Card
+      <Box
         component="main"
-        sx={{ height: "100vh", fontFamily: "Space Grotesk" }}
+        sx={{ height: "100vh", fontFamily: "Space Grotesk", display: {md: 'flex'}}}
       >
         <BackgroundDecoration
           cardName={cardName}
@@ -49,14 +55,18 @@ export default function App() {
           cvc={cvc}
         />
         <Form
+          sent={sent}
+          submit={submit}
           name={name}
           monthC={monthC}
           number={number}
           yearC={yearC}
           cvcC={cvcC}
         />
-        <Thank />
-      </Card>
+        <Thank 
+        submit={submit}
+        />
+      </Box>
     </>
   );
 }

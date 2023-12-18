@@ -27,6 +27,8 @@ export const BackgroundDecoration = ({cardName, cardNumber, month, year, cvc}) =
         component="figure"
         sx={{
           position: "relative",
+          height: {md:'100vh'},
+          width: {md:'30vw'}
         }}
       >
         <Img src={img.bgMainMobile} alt="" />
@@ -34,11 +36,11 @@ export const BackgroundDecoration = ({cardName, cardNumber, month, year, cvc}) =
       <Box
         component="figure"
         sx={{
-          width: "80%",
+          width: {xs: '80%', md:'30%' ,xl:'25%'},
           zIndex: "10",
-          top: "40px",
-          right: "0",
-          left: "10%",
+          top: {xs: '40px', md:'55%'},
+          right: {md:'40%'},
+          left: {xs: '10%', md:'0'},
           margin: "auto",
         }}
         position={"absolute"}
@@ -47,11 +49,11 @@ export const BackgroundDecoration = ({cardName, cardNumber, month, year, cvc}) =
           position="absolute"
           variant="span"
           color="primary.contrastText"
-          fontSize="4vw"
           sx={{
             top: "42%",
             right: "15%",
             zIndex: 100,
+            fontSize: {xs: '4vw',md:'1.54vw' , xl:'1.25vw'}
           }}
         >
           {cvc}
@@ -61,20 +63,20 @@ export const BackgroundDecoration = ({cardName, cardNumber, month, year, cvc}) =
       <Box
         component="figure"
         sx={{
-          width: "80%",
+          width: {xs: '80%', md:'30%' ,xl:'25%'},
           zIndex: "100",
-          top: "1px",
+          top: {xs: '1px', md:'20vh' ,xl:'20%'},
           marginTop: "10px",
           right: "0",
-          left: "-10%",
-          margin: "38% auto",
+          left: {xs: '-10%', md:'-55%'},
+          margin:{xs: "38% auto", md:'auto'},
         }}
         position={"absolute"}
       >
         <Box
           sx={{
-            width: "8vw",
-            height: "8vw",
+            width: {xs: '8vw', md:'4vw' , xl:'3vw'},
+            height: {xs: '8vw', md:'4vw' , xl:'3vw'},
             position: "absolute",
             top: "15px",
             left: "10%",
@@ -84,8 +86,8 @@ export const BackgroundDecoration = ({cardName, cardNumber, month, year, cvc}) =
         ></Box>
         <Box
           sx={{
-            width: "3vw",
-            height: "3vw",
+            width: {xs: '3vw',md:'1.5vw' , xl:'1.5vw'},
+            height: {xs: '3vw',md:'1.5vw' , xl:'1.5vw'},
             position: "absolute",
             top: "25px",
             left: "25%",
@@ -99,11 +101,11 @@ export const BackgroundDecoration = ({cardName, cardNumber, month, year, cvc}) =
           position="absolute"
           variant="span"
           color="primary.contrastText"
-          fontSize="5vw"
           sx={{
             top: "75%",
             right: "10%",
             zIndex: 100,
+            fontSize: {xs: '5vw',md:'1.5vw' , xl:'1.25vw'}
           }}
         >
           {month + "/" + year}
@@ -112,11 +114,11 @@ export const BackgroundDecoration = ({cardName, cardNumber, month, year, cvc}) =
           position="absolute"
           variant="span"
           color="primary.contrastText"
-          fontSize="5.5vw"
           sx={{
             top: "50%",
             left: "12%",
             zIndex: 100,
+            fontSize: {xs: '5.5vw',md:'2vw' , xl:'1.75vw'}
           }}
         >
           {cardNumber}
@@ -125,11 +127,11 @@ export const BackgroundDecoration = ({cardName, cardNumber, month, year, cvc}) =
           position="absolute"
           variant="span"
           color="primary.contrastText"
-          fontSize="5vw"
           sx={{
             top: "75%",
             left: "10%",
             zIndex: 100,
+            fontSize: {xs: '5vw',md:'1.5vw' , xl:'1.25vw'}
           }}
         >
           {cardName}
