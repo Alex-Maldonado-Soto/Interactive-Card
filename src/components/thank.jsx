@@ -17,6 +17,7 @@ export default function Thank({submit}) {
         }}
       >
         <CheckIcon
+        ///////permite colocar css adentro delso componentes con material ui
           sx={{
             fontSize: "60px",
             borderRadius: "100%",

@@ -35,12 +35,16 @@ export default function App() {
     setCvc(newCvc);
   };
 
+  /////////////// Crea una variable mutable en react
   const [submit, setSubmit] = useState("");
 
+  ///////Permite cambiar la variable atravez de una constante
   const sent = (newSubmit) => {
     setSubmit(newSubmit);
   };
 
+
+///////////// retorna toda la maquetacion necesaria para el bloque
   return (
     <>
       <Box

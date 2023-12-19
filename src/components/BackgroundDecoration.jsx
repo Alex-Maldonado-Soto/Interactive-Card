@@ -7,6 +7,8 @@ import {
 } from "@mui/material";
 import styled from "@emotion/styled";
 
+
+///permite crear un componente pormedio de styled y emotion
 const Img = styled("img")({
   width: "100%",
   height: "100%",

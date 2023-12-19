@@ -9,6 +9,10 @@ export default function Form({ name, number, monthC, yearC, cvcC, sent, submit }
   const [year, setYear] = useState("");
   const [cvc, setCvc] = useState("");
 
+  /////////////coloca todas las variables locales
+
+
+  /////////activa una funcion que se activa cuando se envia el form
   const handleSubmit = (e) => {
     e.preventDefault();
     sent(true);
@@ -67,7 +71,7 @@ export default function Form({ name, number, monthC, yearC, cvcC, sent, submit }
           }}
         >
           <InputLabel
-            htmlFor="cardNumber"
+            htmlFor="cardNumber" /////lo que hace es conectar el label con el input
             sx={{ fontSize: "1rem", fontWeight: "bold" }}
           >
             EXP. DATE(MM/YY)
@@ -95,6 +99,8 @@ export default function Form({ name, number, monthC, yearC, cvcC, sent, submit }
               value={year}
               onChange={(e) => {
                 yearC(e.target.value), setYear(e.target.value);
+                /////////// coloca la informacion en una varible en eeste archivo y la otrapara exportarlo al app
+                ///////////se actualica cada vez que se realiza un cambio en el form
               }}
             />
           </Box>
